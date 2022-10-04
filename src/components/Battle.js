@@ -164,6 +164,7 @@ class Battle extends React.Component {
                       <img
                         className="w-[50px] h-[50px] rounded-full"
                         src={player1Info.avatar_url}
+                        alt={player1Info.name}
                       />
                       <h4>{player1Info.login}</h4>
                     </div>
@@ -205,6 +206,7 @@ class Battle extends React.Component {
                       <img
                         className="w-[50px] h-[50px] rounded-full"
                         src={player2Info.avatar_url}
+                        alt={player2Info.name}
                       />
                       <h4>{player2Info.login}</h4>
                     </div>

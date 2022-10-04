@@ -8,6 +8,7 @@ function Player({ player, score, result }) {
         <img
           className="w-full h-[200px] object-contain"
           src={player.avatar_url}
+          alt={player.name}
         />
         <h5 className="my-4 text-sm font-bold">Score: {score}</h5>
         <h2 className="my-6 text-xl text-rose-600 font-bold">{player.login}</h2>
@@ -29,8 +30,10 @@ function Player({ player, score, result }) {
         </div>
 
         <div className="flex items-center  space-x-4 my-2">
-          <FaCode className="text-zinc-600 text-2xl" />
-          <p className="text-lg font-medium">{player.public_repos} repos</p>
+          <FaCode className="text-zinc-600 dark:text-zinc-400 text-2xl" />
+          <p className="text-lg font-medium">
+            {player.public_repos} repositories
+          </p>
         </div>
       </div>
     </div>
