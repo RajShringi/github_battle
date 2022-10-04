@@ -23,7 +23,9 @@ function Repos({ repos }) {
                 alt={repo.owner.login}
               />
             </div>
-            <h1 className="text-xl font-bold text-rose-500">{repo.name}</h1>
+            <a className="text-xl font-bold text-rose-500" href={repo.html_url}>
+              {repo.name}
+            </a>
             <div>
               <div className="flex items-center  space-x-4 my-2">
                 <FaUserAlt className="text-amber-400 text-2xl" />
