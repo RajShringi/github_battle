@@ -20,6 +20,7 @@ class Popular extends React.Component {
     const url = `https://api.github.com/search/repositories?q=stars:%3E1+language:${language}&sort=stars&order=desc&type=Repositories`;
     const res = await fetch(url);
     const data = await res.json();
+    console.log(data);
     this.setState({
       language,
       repos: data.items || [],
@@ -35,8 +36,10 @@ class Popular extends React.Component {
             return (
               <p
                 onClick={() => this.fetchRepo(language)}
-                className={`font-bold cursor-pointer ${
-                  language === this.state.language ? "text-rose-600" : ""
+                className={`font-bold cursor-pointer dark:text-white ${
+                  language === this.state.language
+                    ? "text-rose-600 dark:text-rose-600"
+                    : ""
                 }`}
                 key={language}
               >
