@@ -2,10 +2,13 @@ import { FaUserAlt, FaUsers, FaUserFriends, FaCode } from "react-icons/fa";
 
 function Player({ player, score, result }) {
   return (
-    <div className="p-4">
+    <div className="p-4 basis-[24%] bg-gray-50 dark:text-white dark:bg-zinc-600">
       <div className="text-center">
         <h1 className="text-3xl text-center mb-4 font-light">{result}</h1>
-        <img className="h-[200px]" src={player.avatar_url} />
+        <img
+          className="w-full h-[200px] object-contain"
+          src={player.avatar_url}
+        />
         <h5 className="my-4 text-sm font-bold">Score: {score}</h5>
         <h2 className="my-6 text-xl text-rose-600 font-bold">{player.login}</h2>
       </div>

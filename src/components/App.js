@@ -1,5 +1,7 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Battle from "./Battle";
+import Header from "./Header";
 import Popular from "./Popular";
 
 class App extends React.Component {
@@ -20,8 +22,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="dark:bg-zinc-700 h-screen overflow-y-scroll">
-        <Popular />
-        {/* <Battle /> */}
+        <Header theme={this.state.theme} changeTheme={this.changeTheme} />
+        <Switch>
+          <Route exact path="/">
+            <Popular />
+          </Route>
+
+          <Route path="/battle">
+            <Battle />
+          </Route>
+        </Switch>
       </div>
     );
   }

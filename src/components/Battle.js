@@ -127,7 +127,7 @@ class Battle extends React.Component {
     }
 
     return (
-      <div className="container mx-auto text-gray-700">
+      <div className="container mx-auto text-gray-700 dark:text-white">
         {!player1Score && !player2Score && <Instructions />}
         {!player1Score && !player2Score && (
           <div className="mt-14">
@@ -138,7 +138,7 @@ class Battle extends React.Component {
                 {!player1Info && (
                   <form onSubmit={this.handleSubmitPlayer1}>
                     <input
-                      className="shadow-inner border p-2 mr-6 w-[70%] rounded-lg"
+                      className="shadow-inner border p-2 mr-6 w-[70%] rounded-lg dark:text-gray-700"
                       placeholder="github username"
                       name="player1"
                       value={player1}
@@ -147,7 +147,7 @@ class Battle extends React.Component {
                     />
                     <button
                       disabled={!player1 ? true : false}
-                      className="uppercase tracking-widest py-2 px-6 bg-gray-700 text-white rounded-lg disabled:bg-gray-300"
+                      className="uppercase tracking-widest py-2 px-6 bg-gray-700 dark:bg-zinc-600 text-white rounded-lg disabled:bg-gray-300 dark:disabled:bg-gray-300"
                       type="submit"
                     >
                       Submit
@@ -159,7 +159,7 @@ class Battle extends React.Component {
                 )}
 
                 {player1Info && (
-                  <div className="flex justify-between items-center bg-gray-50 p-4 w-[90%]">
+                  <div className="flex justify-between items-center bg-gray-50 dark:bg-zinc-600 p-4 w-[90%]">
                     <div className="flex items-center space-x-4">
                       <img
                         className="w-[50px] h-[50px] rounded-full"
@@ -180,7 +180,7 @@ class Battle extends React.Component {
                 {!player2Info && (
                   <form onSubmit={this.handleSubmitPlayer2}>
                     <input
-                      className="shadow-inner border p-2 inline-block mr-6 w-[70%] rounded-lg"
+                      className="shadow-inner border p-2 inline-block mr-6 w-[70%] rounded-lg dark:text-gray-700"
                       placeholder="github username"
                       autoComplete="off"
                       name="player2"
@@ -189,7 +189,7 @@ class Battle extends React.Component {
                     />
                     <button
                       disabled={!player2 ? true : false}
-                      className="uppercase tracking-widest py-2 px-6 bg-gray-700 text-white rounded-lg disabled:bg-gray-300"
+                      className="uppercase tracking-widest py-2 px-6 bg-gray-700 dark:bg-zinc-600 text-white rounded-lg disabled:bg-gray-300 dark:disabled:bg-gray-300"
                       type="submit"
                     >
                       Submit
@@ -200,7 +200,7 @@ class Battle extends React.Component {
                   </form>
                 )}
                 {player2Info && (
-                  <div className="flex justify-between items-center bg-gray-50 p-4 w-[90%]">
+                  <div className="flex justify-between items-center bg-gray-50 dark:bg-zinc-600 p-4 w-[90%]">
                     <div className="flex items-center space-x-4">
                       <img
                         className="w-[50px] h-[50px] rounded-full"
@@ -219,7 +219,7 @@ class Battle extends React.Component {
             <div className="text-center my-14">
               {player1Info && player2Info && (
                 <button
-                  className="uppercase tracking-widest py-2 px-6 bg-gray-700 text-white rounded-lg"
+                  className="uppercase tracking-widest py-2 px-6 bg-gray-700 text-white rounded-lg dark:bg-zinc-600"
                   onClick={this.handleBattle}
                 >
                   Battle
@@ -230,7 +230,7 @@ class Battle extends React.Component {
         )}
         {player1Score && player2Score && (
           <div>
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex justify-around items-center space-x-8">
               <Player
                 player={player1Info}
                 score={player1Score}
@@ -245,7 +245,7 @@ class Battle extends React.Component {
             </div>
             <div className="text-center my-14">
               <button
-                className="uppercase tracking-widest py-2 px-6 bg-gray-700 text-white rounded-lg"
+                className="uppercase tracking-widest py-2 px-6 bg-gray-700 text-white rounded-lg dark:bg-zinc-600"
                 onClick={this.handleReset}
               >
                 Reset
